@@ -1,4 +1,4 @@
-import type React from "react"
+import React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -23,7 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <AuthProvider>{children}<AddSurveyButton /></AuthProvider>
+          <AuthProvider>
+            {children}
+            
+            <AddSurveyButton />
+          
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
